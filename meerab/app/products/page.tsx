@@ -3,7 +3,13 @@
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/footer";
 import { motion } from "framer-motion";
-
+// Add Product interface
+interface Product {
+  name: string;
+  desc: string;
+  price: string;
+  img: string;
+}
 export default function ProductsPage() {
   const products = [
     {
@@ -53,7 +59,7 @@ export default function ProductsPage() {
     },
   ];
 
-  const ProductCard = ({ p, i }: { p: any; i: number }) => (
+ const ProductCard = ({ p, i }: { p: Product; i: number }) => (
     <motion.div
       key={i}
       className="bg-white rounded-xl p-6 text-center border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer"
@@ -86,7 +92,6 @@ export default function ProductsPage() {
       <p className="text-green-700 font-semibold text-base">{p.price}</p>
     </motion.div>
   );
-
   return (
     <>
       <Navbar />

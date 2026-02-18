@@ -6,7 +6,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { motion } from "framer-motion";
-import { Jersey_10, Pacifico, Rubik, Rubik_Vinyl, Teko } from "next/font/google";
+import { Pacifico } from "next/font/google";
 import { MessageCircle } from "lucide-react";
 
 const jersey = Pacifico({
@@ -199,15 +199,15 @@ export default function HomePage() {
                 <span>What is silica gel?</span>
                 <span className="transition-transform duration-300 group-open:rotate-180">⌄</span>
               </summary>
-              <p className="text-gray-700 mt-4">Silica gel is a porous, amorphous solid that is commonly used as a desiccant to control humidity and absorb moisture. It's made from silicon dioxide and has a high surface area, allowing it to adsorb water vapor effectively.</p>
-            </details>
+               <p className="text-gray-700 mt-4">{`Silica gel is a porous, amorphous solid that is commonly used as a desiccant to control humidity and absorb moisture. It's made from silicon dioxide and has a high surface area, allowing it to adsorb water vapor effectively`}</p>       
+                    </details>
             {/* FAQ 2*/}
             <details className="bg-white shadow rounded-lg p-6 group">
               <summary className="cursor-pointer font-semibold text-lg text-green-800 flex justify-between items-center">
                 <span>What are the uses of silica gel?</span>
                 <span className="transition-transform duration-300 group-open:rotate-180">⌄</span>
               </summary>
-              <p className="text-gray-700 mt-4">Silica gel is primarily used as a desiccant, which means it absorbs moisture to keep products dry and prevent damage from humidity.</p>
+              <p className="text-gray-700 mt-4">{`Silica gel is primarily used as a desiccant, which means it absorbs moisture to keep products dry and prevent damage from humidity.`}</p>
             </details>
              {/* FAQ 3*/}
             <details className="bg-white shadow rounded-lg p-6 group">
@@ -215,7 +215,7 @@ export default function HomePage() {
                 <span>Can it be used in storage containers?</span>
                 <span className="transition-transform duration-300 group-open:rotate-180">⌄</span>
               </summary>
-              <p className="text-gray-700 mt-4">Yes. Silica gel is ideal for long-term storage of items like clothes, tools, or collectibles to maintain dryness and prevent rust or mold.</p>
+              <p className="text-gray-700 mt-4">{`Yes. Silica gel is ideal for long-term storage of items like clothes, tools, or collectibles to maintain dryness and prevent rust or mold.`}</p>
             </details>
               {/* FAQ 4*/}
             <details className="bg-white shadow rounded-lg p-6 group">
@@ -223,7 +223,7 @@ export default function HomePage() {
                 <span>Any other uses?</span>
                 <span className="transition-transform duration-300 group-open:rotate-180">⌄</span>
               </summary>
-              <p className="text-gray-700 mt-4">Perfect for storing documents, photos, seeds, spices, or even craft projects, keeping them dry and fresh.</p>
+              <p className="text-gray-700 mt-4">{`Perfect for storing documents, photos, seeds, spices, or even craft projects, keeping them dry and fresh.`}</p>
             </details>
           </div>
         </section>
@@ -238,9 +238,8 @@ export default function HomePage() {
   <MessageCircle className="w-7 h-7" />
 </a>
 
-      </main>
-
-      <Footer />
+   </main>
+    <Footer />
     </>
   );
 }
