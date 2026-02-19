@@ -54,9 +54,9 @@ export default function ContactPage() {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-indigo-900 mb-4">Get in Touch</h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We'd love to hear from you. Send us a message and we'll respond as soon as possible.
-            </p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+  {`We'd love to hear from you. Send us a message and we'll respond as soon as possible.`}
+</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
