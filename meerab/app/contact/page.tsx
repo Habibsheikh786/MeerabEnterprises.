@@ -15,19 +15,44 @@ export default function ContactPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send data to an API
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    // Reset form after submission
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setLoading(true);
+    setError("");
+    setSubmitted(false);
+
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: `Phone: ${formData.phone}\n\n${formData.message}`,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError("Message send nahi hua. Dobara try karein.");
+      }
+    } catch {
+      setError("Server se connect nahi ho saka. Baad mein try karein.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -54,9 +79,9 @@ export default function ContactPage() {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-indigo-900 mb-4">Get in Touch</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-  {`We'd love to hear from you. Send us a message and we'll respond as soon as possible.`}
-</p>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {`We'd love to hear from you. Send us a message and we'll respond as soon as possible.`}
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -68,10 +93,18 @@ export default function ContactPage() {
               className="bg-white p-8 rounded-2xl shadow-xl border border-indigo-100"
             >
               <h2 className="text-2xl font-semibold text-indigo-800 mb-6">Send a Message</h2>
-              
+
+              {/* Success Message */}
               {submitted && (
-                <div className="mb-6 p-4 bg-green-100 text-green-800 rounded-lg">
-                  Thank you! Your message has been sent.
+                <div className="mb-6 p-4 bg-green-100 text-green-800 rounded-lg flex items-center gap-2">
+                  ✅ Thank you! Your message has been sent successfully.
+                </div>
+              )}
+
+              {/* Error Message */}
+              {error && (
+                <div className="mb-6 p-4 bg-red-100 text-red-700 rounded-lg flex items-center gap-2">
+                  ❌ {error}
                 </div>
               )}
 
@@ -141,9 +174,10 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-[1.02] shadow-md"
+                  disabled={loading}
+                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-[1.02] shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </motion.div>
@@ -158,7 +192,7 @@ export default function ContactPage() {
               {/* Contact Details Card */}
               <div className="bg-white p-8 rounded-2xl shadow-xl border border-indigo-100">
                 <h2 className="text-2xl font-semibold text-indigo-800 mb-6">Contact Information</h2>
-                
+
                 <div className="space-y-5">
                   <div className="flex items-start space-x-4">
                     <FaMapMarkerAlt className="w-6 h-6 text-indigo-600 mt-1 shrink-0" />
@@ -207,7 +241,7 @@ export default function ContactPage() {
                   className="w-full h-64 rounded-lg"
                   allowFullScreen
                   loading="lazy"
-                  title="Office location"
+                  title="Meerab Enterprises Office Location"
                 ></iframe>
               </div>
             </motion.div>
