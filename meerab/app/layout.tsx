@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Meerab Enterprises",
     "silica gel wholesale Pakistan",
   ],
-  authors: [{ name: "Meerab Enterprises", url: "https://www.meerabenterprises.com" }],
+  authors: [{ name: "Meerab Enterprises", url: "https://www.meerabenterprises.com.pk" }],
   creator: "Meerab Enterprises",
   publisher: "Meerab Enterprises",
   robots: {
@@ -44,19 +44,19 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.meerabenterprises.com",
+    canonical: "https://www.meerabenterprises.com.pk",
   },
   openGraph: {
     type: "website",
     locale: "en_PK",
-    url: "https://www.meerabenterprises.com",
+    url: "https://www.meerabenterprises.com.pk",
     siteName: "Meerab Enterprises",
     title: "Meerab Enterprises | Premium Silica Gel Supplier in Pakistan",
     description:
       "ISO 9001:2015 certified silica gel products. Quality guaranteed, competitive pricing, on-time delivery across Pakistan.",
     images: [
       {
-        url: "https://www.meerabenterprises.com/og-image.jpg",
+        url: "https://www.meerabenterprises.com.pk/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Meerab Enterprises - Premium Silica Gel Supplier Pakistan",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "Meerab Enterprises | Premium Silica Gel Supplier in Pakistan",
     description:
       "ISO 9001:2015 certified silica gel products. Quality guaranteed, competitive pricing, on-time delivery across Pakistan.",
-    images: ["https://www.meerabenterprises.com/og-image.jpg"],
+    images: ["https://www.meerabenterprises.com.pk/og-image.jpg"],
   },
   verification: {
     google: "YAHAN_APNA_GOOGLE_VERIFICATION_CODE_DALO",
@@ -85,8 +85,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Meerab Enterprises",
-  url: "https://www.meerabenterprises.com",
-  logo: "https://www.meerabenterprises.com/logo.png",
+  url: "https://www.meerabenterprises.com.pk",
+  logo: "https://www.meerabenterprises.com.pk/logo.png",
   description: "Premium quality silica gel products supplier in Pakistan. ISO 9001:2015 certified.",
   telephone: "+923242358791",
   address: {
@@ -107,14 +107,14 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Meerab Enterprises",
-  image: "https://www.meerabenterprises.com/og-image.jpg",
+  image: "https://www.meerabenterprises.com.pk/og-image.jpg",
   telephone: "+923242358791",
   address: {
     "@type": "PostalAddress",
     addressCountry: "PK",
     addressRegion: "Sindh",
   },
-  url: "https://www.meerabenterprises.com",
+  url: "https://www.meerabenterprises.com.pk",
   priceRange: "$$",
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",

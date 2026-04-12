@@ -8,7 +8,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { motion } from "framer-motion";
-import { Pacifico } from "next/font/google";
+import { Poppins } from "next/font/google";
 import {
   FaWhatsapp,
   FaShieldAlt,
@@ -16,15 +16,21 @@ import {
   FaTag,
   FaTruck,
   FaArrowUp,
+  FaPills,
+  FaMicrochip,
+  FaCar,
+  FaBox,
+  FaIndustry,
+  FaArchive,
 } from "react-icons/fa";
 import Head from "next/head";
 
-const pacifico = Pacifico({
-  weight: "400",
-  subsets: ["latin-ext"],
+
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
   display: "swap",
 });
-
 const features = [
   {
     icon: <FaShieldAlt className="w-8 h-8" aria-hidden="true" />,
@@ -257,7 +263,7 @@ export default function HomePage() {
                   <div className="relative w-full h-full">
                     <img
                       src={`/banners/${img}`}
-                      alt={`Meerab Enterprises silica gel products banner ${i + 1}`}
+                      alt={`Silica gel and packaging materials supplier in Karachi banner${i + 1}`}
                       className="w-full h-full object-cover"
                       loading={i === 0 ? "eager" : "lazy"}
                       width={1200}
@@ -271,35 +277,132 @@ export default function HomePage() {
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10 flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 md:px-8">
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight ${pacifico.className}`}
-            >
-              Welcome To Meerab Enterprises
-            </motion.h1>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight ${poppins.className}`}
+>
+  Premium Silica Gel Supplier & Packaging Solutions in Karachi
+</motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-sm sm:text-base md:text-lg lg:text-xl max-w-xs sm:max-w-lg md:max-w-2xl mb-6 sm:mb-8 leading-relaxed"
             >
-              We supply premium quality silica gel products for your business needs with guaranteed satisfaction.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <a
-                href="/products"
-                className="inline-block bg-white text-indigo-900 px-5 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-indigo-700 hover:text-white transition duration-300 shadow-lg"
-              >
-                View Products
-              </a>
-            </motion.div>
+             Meerab Enterprises supplies high-quality silica gel packets, adhesive tapes, and packaging solutions for industrial applications. Reliable bulk supply with fast delivery across Karachi.  </motion.p>
+        <motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.5, delay: 0.4 }}
+  className="flex flex-col sm:flex-row items-center justify-center gap-4"
+>
+  <a
+    href="/contact"
+    className="inline-block bg-white text-indigo-900 px-5 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-indigo-700 hover:text-white transition duration-300 shadow-lg"
+  >
+    Get Bulk Quote
+  </a>
+
+  <a
+    href="https://wa.me/923242358791"
+    target="_blank"
+    className="inline-block bg-green-500 text-white px-5 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-green-600 transition duration-300 shadow-lg"
+  >
+    WhatsApp for Quick Quote
+  </a>
+</motion.div>
           </div>
         </section>
+                      {/* ===== INDUSTRIES WE SERVE SECTION ===== */}
+        <section
+          aria-labelledby="industries-heading"
+          className="max-w-6xl mx-auto py-12 sm:py-14 md:py-16 px-4 sm:px-6"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-10 sm:mb-12"
+          >
+            <h2
+              id="industries-heading"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-indigo-800 mb-3 sm:mb-4"
+            >
+              Industries We Serve
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+              Trusted moisture control solutions across diverse sectors
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
+            {[
+              {
+                icon: <FaPills className="w-8 h-8" />,
+                title: "Pharmaceuticals",
+                desc: "Protecting medicines, vitamins, and medical devices from humidity damage during storage and transit.",
+              },
+              {
+                icon: <FaMicrochip className="w-8 h-8" />,
+                title: "Electronics",
+                desc: "Preventing corrosion and short circuits in PCBs, semiconductors, and sensitive components.",
+              },
+              {
+                icon: <FaCar className="w-8 h-8" />,
+                title: "Automotive",
+                desc: "Moisture control for headlights, spare parts, and vehicle interiors to avoid fogging and rust.",
+              },
+              {
+                icon: <FaBox className="w-8 h-8" />,
+                title: "Food Packaging",
+                desc: "Keeping dry fruits, spices, biscuits, and pet food fresh and crisp without mold.",
+              },
+              {
+                icon: <FaIndustry className="w-8 h-8" />,
+                title: "Leather & Footwear",
+                desc: "Preserving leather goods, shoes, and bags from mildew and odor in warehouses.",
+              },
+              {
+                icon: <FaArchive className="w-8 h-8" />,
+                title: "Storage & Logistics",
+                desc: "Container desiccants for shipping, storage units, and military equipment protection.",
+              },
+            ].map((industry, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="bg-white rounded-2xl p-5 sm:p-6 shadow-md border border-indigo-100 hover:shadow-xl hover:border-indigo-200 transition-all"
+              >
+                <div className="text-indigo-600 mb-3 sm:mb-4 flex justify-center">
+                  {industry.icon}
+                </div>
+                <h3 className="font-bold text-lg sm:text-xl text-center text-indigo-900 mb-2">
+                  {industry.title}
+                </h3>
+                <p className="text-gray-600 text-sm sm:text-base text-center leading-relaxed">
+                  {industry.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+        <div className="text-center mt-10">
+  <a
+    href="/contact"
+    className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition"
+  >
+    Get Industry-Specific Quote →
+  </a>
+  <p className="text-gray-500 text-sm mt-3">
+    Tell us your industry, we'll recommend the right silica gel.
+  </p>
+</div>
 
         {/* ===== FEATURED PRODUCTS ===== */}
         <section

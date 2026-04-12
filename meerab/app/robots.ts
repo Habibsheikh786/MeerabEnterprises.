@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/", "/admin/"],
       },
     ],
-    sitemap: "https://www.meerabenterprises.com/sitemap.xml",
-    host: "https://www.meerabenterprises.com",
+    sitemap: "https://www.meerabenterprises.com.pk/sitemap.xml",
+    host: "https://www.meerabenterprises.com.pk",
   };
 }
