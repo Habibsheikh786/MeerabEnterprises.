@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "silica gel pouches",
     "desiccant bags Pakistan",
     "moisture absorber Pakistan",
-    "silica gel supplier Karachi",
+    "silica gel supplier in Karachi",
     "silica gel 1gm pouches",
     "silica gel 5gm pouches",
     "industrial desiccant Pakistan",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     google: "YAHAN_APNA_GOOGLE_VERIFICATION_CODE_DALO",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/faviconicon.png",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
