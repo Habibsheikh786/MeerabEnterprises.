@@ -26,7 +26,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
@@ -38,8 +37,8 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-lg bg-white/90 shadow-md py-2"
-          : "backdrop-blur-md bg-white/50 py-3 sm:py-4"
+          ? "backdrop-blur-lg bg-white/90 shadow-md py-1.5 sm:py-2"   // mobile py-1.5, sm+ py-2
+          : "backdrop-blur-md bg-white/50 py-2 sm:py-4"                // mobile py-2, sm+ py-4
       } border-b border-white/30`}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6">
@@ -54,9 +53,9 @@ export default function Navbar() {
             <Image
               src="/logo/logo.png"
               alt="Meerab Enterprises Logo"
-              width={40}
-              height={45}
-              className="rounded-full shadow-sm"
+              width={36}        // mobile par thoda chhota
+              height={40}
+              className="rounded-full shadow-sm sm:w-10 sm:h-[45px]"  // desktop par original size
               priority
             />
           </motion.div>
@@ -64,7 +63,7 @@ export default function Navbar() {
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-extrabold text-gray-800 tracking-wide truncate max-w-[150px] xs:max-w-[200px] sm:max-w-none"
+            className="text-sm sm:text-lg md:text-xl lg:text-2xl font-extrabold text-gray-800 tracking-wide truncate max-w-[150px] xs:max-w-[200px] sm:max-w-none"
           >
             Meerab Enterprises
           </motion.span>

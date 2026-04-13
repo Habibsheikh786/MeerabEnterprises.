@@ -14,12 +14,11 @@ export default function AdminLoginPage() {
     setError("");
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
+      const res = await fetch("https://meerab-backend-production.up.railway.app/admin/login", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(form),
+});
       const data = await res.json();
 
       if (data.success) {
