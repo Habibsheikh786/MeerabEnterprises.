@@ -14,7 +14,7 @@ export default function Footer() {
         <div>
           <h2 className="text-2xl font-bold mb-4 text-white">Meerab Enterprises</h2>
           <p className="text-gray-400 text-sm leading-relaxed mb-4">
-            Leading supplier of silica gel and moisture control solutions since 2005.
+            Leading supplier of silica gel and moisture control solutions since 2021.
           </p>
           {/* Address with icon */}
           <div className="flex items-start space-x-3 mb-3 group">
@@ -43,8 +43,8 @@ export default function Footer() {
           {/* Phone */}
           <div className="flex items-center space-x-3 mb-3 group">
             <Phone className="w-5 h-5 text-sky-400 group-hover:text-sky-300 transition" />
-            <a href="tel:+923242358791" className="hover:text-sky-400 transition text-gray-300">
-              +92 324 2358791
+            <a href="tel:+923302277371" className="hover:text-sky-400 transition text-gray-300">
+              +92 330 2277371
             </a>
           </div>
 
@@ -83,10 +83,12 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 mt-10">
         <div className="text-sm space-y-3">
           <iframe
-            src="https://www.google.com/maps?q=Office%20%2331%2C32%2C%20Suleman%20Trade%20Center%2C%20jeswani%20street%2C%20near%20chamber%20of%20commerce%2C%20Karachi&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.3525829788655!2d67.00125427442948!3d24.851804745605605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f46ad29e1ef%3A0x258260e284639454!2sMeerab%20Enterprises%7C%20Premium%20Silica%20Gel%20%26%20packaging%20Solution%20Karachi!5e0!3m2!1sen!2s!4v1776233780116!5m2!1sen!2s"
             className="w-full h-48 rounded-lg border-0 shadow-lg"
             allowFullScreen
             loading="lazy"
+             referrerPolicy="no-referrer-when-downgrade"
+              title="Meerab Enterprises Location Karachi"
           ></iframe>
         </div>
       </div>

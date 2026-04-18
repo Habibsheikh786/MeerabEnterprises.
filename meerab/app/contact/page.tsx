@@ -60,7 +60,7 @@ export default function ContactPage() {
       <Navbar />
       {/* Floating WhatsApp Icon */}
       <a
-        href="https://wa.me/923242358791"
+        href="https://wa.me/923302277371"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50 flex items-center justify-center"
@@ -205,8 +205,8 @@ export default function ContactPage() {
 
                   <div className="flex items-center space-x-4">
                     <FaPhone className="w-5 h-5 text-indigo-600" />
-                    <a href="tel:+923242358791" className="text-gray-700 hover:text-indigo-600 transition">
-                      +92 324 2358791
+                    <a href="tel:+923302277371" className="text-gray-700 hover:text-indigo-600 transition">
+                      +92 330 2277371
                     </a>
                   </div>
 

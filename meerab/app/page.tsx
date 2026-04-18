@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/footer";
+import OurClientsSection from "@/app/components/OurClientsSection";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -25,12 +26,12 @@ import {
 } from "react-icons/fa";
 import Head from "next/head";
 
-
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
   display: "swap",
 });
+
 const features = [
   {
     icon: <FaShieldAlt className="w-8 h-8" aria-hidden="true" />,
@@ -222,7 +223,7 @@ export default function HomePage() {
 
       {/* Floating WhatsApp Icon */}
       <a
-        href="https://wa.me/923242358791"
+        href="https://wa.me/923302277371"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-4 sm:right-6 bg-green-500 text-white p-3 sm:p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50 flex items-center justify-center"
@@ -243,82 +244,83 @@ export default function HomePage() {
       </button>
 
       <main id="main-content">
-      {/* ===== HERO SECTION ===== */}
-<section
-  aria-label="Hero Banner"
-  className="relative w-full h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] overflow-hidden"
->
-  <Swiper
-    spaceBetween={0}
-    slidesPerView={1}
-    loop={true}
-    autoplay={{ delay: 4000, disableOnInteraction: false }}
-    pagination={{ clickable: true }}
-    modules={[Autoplay, Pagination]}
-    className="w-full h-full"
-  >
-    {["banner1.jpg.jfif", "banner2.jpg.jfif", "banner3.jpg.jfif"].map(
-      (img, i) => (
-        <SwiperSlide key={i}>
-          <div className="relative w-full h-full">
-            <img
-              src={`/banners/${img}`}
-              alt={`Silica gel and packaging materials supplier in Karachi banner${i + 1}`}
-              className="w-full h-full object-cover"
-              loading={i === 0 ? "eager" : "lazy"}
-              width={1200}
-              height={600}
-            />
+        {/* ===== HERO SECTION ===== */}
+        <section
+          aria-label="Hero Banner"
+          className="relative w-full h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] overflow-hidden"
+        >
+          <Swiper
+            spaceBetween={0}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            modules={[Autoplay, Pagination]}
+            className="w-full h-full"
+          >
+            {["banner1.jpg.jfif", "banner2.jpg.jfif", "banner3.jpg.jfif"].map(
+              (img, i) => (
+                <SwiperSlide key={i}>
+                  <div className="relative w-full h-full">
+                    <img
+                      src={`/banners/${img}`}
+                      alt={`Silica gel and packaging materials supplier in Karachi banner${i + 1}`}
+                      className="w-full h-full object-cover"
+                      loading={i === 0 ? "eager" : "lazy"}
+                      width={1200}
+                      height={600}
+                    />
+                  </div>
+                </SwiperSlide>
+              )
+            )}
+          </Swiper>
+
+          {/* Overlay content with top padding for fixed navbar */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10 flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 md:px-8 pt-20 sm:pt-24">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 leading-tight ${poppins.className}`}
+            >
+              Premium Silica Gel Supplier & Packaging Solutions in Karachi
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl max-w-xs sm:max-w-lg md:max-w-2xl mb-5 sm:mb-6 leading-snug"
+            >
+              Meerab Enterprises supplies high-quality silica gel packets, adhesive tapes, and packaging solutions for industrial applications. Reliable bulk supply with fast delivery across Karachi.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
+            >
+              <a
+                href="/contact"
+                className="inline-block bg-white text-indigo-900 px-5 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-indigo-700 hover:text-white transition duration-300 shadow-lg"
+              >
+                Get Bulk Quote
+              </a>
+
+              <a
+                href="https://wa.me/923242358791"
+                target="_blank"
+                className="inline-block bg-green-500 text-white px-5 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-green-600 transition duration-300 shadow-lg"
+              >
+                WhatsApp for Quick Quote
+              </a>
+            </motion.div>
           </div>
-        </SwiperSlide>
-      )
-    )}
-  </Swiper>
+        </section>
 
-  {/* Overlay content with top padding for fixed navbar */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10 flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 md:px-8 pt-20 sm:pt-24">
-    <motion.h1
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 leading-tight ${poppins.className}`}
-    >
-      Premium Silica Gel Supplier & Packaging Solutions in Karachi
-    </motion.h1>
-
-    <motion.p
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      className="text-sm sm:text-base md:text-lg lg:text-xl max-w-xs sm:max-w-lg md:max-w-2xl mb-5 sm:mb-6 leading-snug"
-    >
-      Meerab Enterprises supplies high-quality silica gel packets, adhesive tapes, and packaging solutions for industrial applications. Reliable bulk supply with fast delivery across Karachi.
-    </motion.p>
-
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, delay: 0.4 }}
-      className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
-    >
-      <a
-        href="/contact"
-        className="inline-block bg-white text-indigo-900 px-5 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-indigo-700 hover:text-white transition duration-300 shadow-lg"
-      >
-        Get Bulk Quote
-      </a>
-
-      <a
-        href="https://wa.me/923242358791"
-        target="_blank"
-        className="inline-block bg-green-500 text-white px-5 sm:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-green-600 transition duration-300 shadow-lg"
-      >
-        WhatsApp for Quick Quote
-      </a>
-    </motion.div>
-  </div>
-</section>
-                      {/* ===== INDUSTRIES WE SERVE SECTION ===== */}
+        {/* ===== INDUSTRIES WE SERVE SECTION ===== */}
         <section
           aria-labelledby="industries-heading"
           className="max-w-6xl mx-auto py-12 sm:py-14 md:py-16 px-4 sm:px-6"
@@ -396,17 +398,18 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+
         <div className="text-center mt-10">
-  <a
-    href="/contact"
-    className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition"
-  >
-    Get Industry-Specific Quote →
-  </a>
-  <p className="text-gray-500 text-sm mt-3">
-    Tell us your industry, we'll recommend the right silica gel.
-  </p>
-</div>
+          <a
+            href="/contact"
+            className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition"
+          >
+            Get Industry-Specific Quote →
+          </a>
+          <p className="text-gray-500 text-sm mt-3">
+            Tell us your industry, we'll recommend the right silica gel.
+          </p>
+        </div>
 
         {/* ===== FEATURED PRODUCTS ===== */}
         <section
@@ -687,6 +690,7 @@ export default function HomePage() {
           </div>
         </section>
 
+       <OurClientsSection/>
         {/* ===== FAQ SECTION ===== */}
         <section
           aria-labelledby="faq-heading"
@@ -714,9 +718,7 @@ export default function HomePage() {
                   className="bg-white rounded-xl shadow-md overflow-hidden"
                 >
                   <button
-                    onClick={() =>
-                      setOpenFaq(openFaq === index ? null : index)
-                    }
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     className="w-full cursor-pointer px-4 sm:px-6 py-3 sm:py-4 font-semibold text-indigo-900 flex justify-between items-center hover:bg-indigo-50 transition text-left text-sm sm:text-base"
                     aria-expanded={openFaq === index}
                     aria-controls={`faq-answer-${index}`}
